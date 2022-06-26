@@ -1,0 +1,20 @@
+//tooltip
+@mixin tooltipCustom($width: 200px, $offset-top: 20px, $offset-left: 20px) {
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    &::after {
+      z-index: 1;
+      padding: 5px;
+      position: absolute;
+      top: $offset-top;
+      left: $offset-left;
+      content: attr(data-description);
+      width: $width;
+      border-radius: 8px;
+      line-height: 1;
+      background-color: $tooltip-background;
+    }
+  }
+}
